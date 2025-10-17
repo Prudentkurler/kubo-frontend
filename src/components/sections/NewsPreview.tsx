@@ -107,7 +107,7 @@ export function NewsPreview({ articles }: NewsPreviewProps) {
                       </span>
                     </div>
 
-                    <h3 className="text-3xl md:text-4xl font-light mb-4 leading-tight group-hover:text-gray-200 transition-colors">
+                    <h3 className="text-3xl md:text-4xl font-light text-white mb-4 leading-tight group-hover:text-gray-200 transition-colors">
                       {featuredArticle.title}
                     </h3>
 
@@ -115,9 +115,9 @@ export function NewsPreview({ articles }: NewsPreviewProps) {
                       {featuredArticle.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between text-sm text-gray-400">
-                      {featuredArticle.author && <span>{featuredArticle.author}</span>}
-                      <span className="flex items-center gap-2 text-white group-hover:gap-3 transition-all">
+                    <div className="flex items-center justify-between text-sm">
+                      {featuredArticle.author && <span className="text-gray-400 font-light">{featuredArticle.author}</span>}
+                      <span className="flex items-center gap-2 text-white font-light group-hover:gap-3 transition-all">
                         Read more
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -161,7 +161,7 @@ export function NewsPreview({ articles }: NewsPreviewProps) {
                         <span className="text-xs text-gray-400 font-light">
                           {article.category}
                         </span>
-                        <span className="text-gray-600">•</span>
+                        <span className="text-gray-500">•</span>
                         <span className="text-xs text-gray-400 font-light">
                           {new Date(article.date).toLocaleDateString('en-US', {
                             month: 'short',
@@ -170,7 +170,7 @@ export function NewsPreview({ articles }: NewsPreviewProps) {
                         </span>
                       </div>
 
-                      <h3 className="text-lg font-normal mb-2 leading-snug group-hover:text-gray-200 transition-colors line-clamp-2">
+                      <h3 className="text-lg font-normal text-white mb-2 leading-snug group-hover:text-gray-200 transition-colors line-clamp-2">
                         {article.title}
                       </h3>
 
@@ -179,7 +179,7 @@ export function NewsPreview({ articles }: NewsPreviewProps) {
                       </p>
 
                       {article.readTime && (
-                        <span className="text-xs text-gray-500">{article.readTime}</span>
+                        <span className="text-xs text-gray-500 font-light">{article.readTime}</span>
                       )}
                     </div>
                   </div>
