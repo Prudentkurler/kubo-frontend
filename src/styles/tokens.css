@@ -1,0 +1,56 @@
+:root {
+  /* Background layers */
+  --bg-1: #FFFFFF;
+  --bg-2: #FAFBFC;
+  --bg-3: #F4F6F8;
+
+  /* Surface colors */
+  --surface-border: rgba(11, 18, 32, 0.08);
+  --surface-card: rgba(255, 255, 255, 0.95);
+  --surface-glass: rgba(255, 255, 255, 0.7);
+
+  /* Text hierarchy */
+  --text-primary: #0B1220;
+  --text-secondary: #586273;
+  --text-tertiary: #8B96A5;
+
+  /* Accent colors */
+  --accent-400: #2E9DFF;
+  --accent-500: #007EFF;
+  --accent-600: #0066CC;
+
+  /* Clinical status colors */
+  --clinical-green: #00C896;
+  --clinical-amber: #FFB020;
+  --clinical-red: #FF3B3B;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 30px rgba(11, 18, 32, 0.06);
+  --shadow-soft-lg: 0 16px 48px rgba(11, 18, 32, 0.08);
+  --shadow-glow: 0 0 0 4px rgba(0, 126, 255, 0.06);
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Border radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* Container */
+  --container-max: 1440px;
+  --container-padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+  }
+}
