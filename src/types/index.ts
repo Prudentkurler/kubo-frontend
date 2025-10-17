@@ -45,3 +45,81 @@ export interface HeroProps {
   heroImageMobile?: string
   alt?: string
 }
+
+export interface RoadmapItem {
+  id: string
+  quarter: string
+  year: string
+  title: string
+  description: string
+  status: 'completed' | 'in-progress' | 'planned'
+}
+
+export interface NewsArticle {
+  id: string
+  title: string
+  excerpt: string
+  date: string
+  category: string
+  image?: string
+  author?: string
+  readTime?: string
+}
+
+export interface RoadmapItem {
+  id: string
+  quarter: string
+  year: string
+  title: string
+  description: string
+  status: 'completed' | 'in-progress' | 'planned'
+}
+
+export interface NewsArticle {
+  id: string
+  title: string
+  excerpt: string
+  date: string
+  category: string
+  author?: string
+}
+
+export interface RoadmapItem {
+  id: string
+  quarter: string
+  year: string
+  title: string
+  description: string
+  status: 'completed' | 'in-progress' | 'planned'
+}
+
+export interface NewsArticle {
+  id: string
+  title: string
+  excerpt: string
+  date: string
+  category: string
+  image?: string
+  author?: string
+  readTime?: string
+}
+
+export interface RoadmapItem {
+  id: string
+  quarter: string
+  year: string
+  title: string
+  description: string
+  status: 'completed' | 'in-progress' | 'planned'
+}
+
+export interface NewsArticle {
+  id: string
+  title: string
+  excerpt: string
+  date: string
+  category: string
+  image?: string
+  author?: string
+  readTime?: string
+}

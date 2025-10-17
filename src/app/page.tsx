@@ -2,11 +2,12 @@ import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { FeatureBento } from '@/components/sections/FeatureBento';
 import { HowItWorksCarousel } from '@/components/sections/HowItWorksCarousel';
-import { TeamGrid } from '@/components/sections/TeamGrid';
+import { StatsSection } from '@/components/sections/StatsSection';
+import { NewsPreview } from '@/components/sections/NewsPreview';
 import { CTASection } from '@/components/sections/CTASection';
 import { Footer } from '@/components/sections/Footer';
 import contentData from '@/data/content.json';
-import { Feature, WorkflowStep, TeamMember } from '@/types';
+import { Feature, WorkflowStep, NewsArticle } from '@/types';
 
 export default function HomePage() {
   const heroData = {
@@ -36,7 +37,9 @@ export default function HomePage() {
       
       <HowItWorksCarousel steps={contentData.workflowSteps as WorkflowStep[]} />
       
-      <TeamGrid members={contentData.team as TeamMember[]} />
+      <StatsSection />
+      
+      <NewsPreview articles={contentData.news as NewsArticle[]} />
       
       <CTASection />
       

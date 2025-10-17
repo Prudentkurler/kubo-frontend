@@ -102,5 +102,87 @@
       "image": "/images/team/james.jpg",
       "linkedin": "https://linkedin.com/in/jameskamau"
     }
+  ],
+  "roadmap": [
+    {
+      "id": "unicerf-genesis",
+      "quarter": "Early",
+      "year": "2024",
+      "title": "UNICERF Incubation",
+      "description": "Where it all started. Initial concept validation and early prototype development at the University of Ghana incubation center.",
+      "status": "completed"
+    },
+    {
+      "id": "ugmc-demo",
+      "quarter": "Mid",
+      "year": "2024",
+      "title": "UGMC Radiology Conference",
+      "description": "First product demonstration with the radiology team at University of Ghana Medical Centre. Critical feedback shaped our clinical workflow.",
+      "status": "completed"
+    },
+    {
+      "id": "korlebu-partnership",
+      "quarter": "Mid",
+      "year": "2024",
+      "title": "Korle Bu Partnership",
+      "description": "Established working relationship with radiologists at Korle Bu Teaching Hospital for clinical validation and real-world testing.",
+      "status": "completed"
+    },
+    {
+      "id": "ghs-it-meeting",
+      "quarter": "Late",
+      "year": "2024",
+      "title": "Ghana Health Service IT Engagement",
+      "description": "Presented to GHS IT team. Exploring integration pathways with national health infrastructure and data standards.",
+      "status": "completed"
+    },
+    {
+      "id": "ug-funding",
+      "quarter": "Late",
+      "year": "2024",
+      "title": "UG SVSP Funding Application",
+      "description": "Applied for funding and collaboration support through University of Ghana Student Venture Support Program.",
+      "status": "in-progress"
+    },
+    {
+      "id": "clinical-pilot",
+      "quarter": "Q1",
+      "year": "2025",
+      "title": "Clinical Pilot Program",
+      "description": "Launch structured pilot with partner hospitals in Ghana. Focus on workflow integration, accuracy validation, and user feedback.",
+      "status": "planned"
+    }
+  ],
+  "news": [
+    {
+      "id": "korlebu-collaboration",
+      "title": "Building in the Open: Our Partnership with Korle Bu Radiologists",
+      "excerpt": "How conversations with practicing radiologists at Ghana's largest teaching hospital are shaping every decision we make about AI-assisted diagnostics.",
+      "date": "2024-10-15",
+      "category": "Development",
+      "image": "/images/news/korlebu-partnership.jpg",
+      "author": "The Team",
+      "readTime": "5 min read"
+    },
+    {
+      "id": "ugmc-lessons",
+      "title": "What We Learned from Our First Clinical Demo at UGMC",
+      "excerpt": "Presenting to real radiologists was humbling. Here's what they told us needed to change, and why we're grateful for their honesty.",
+      "date": "2024-09-28",
+      "category": "Insights",
+      "image": "/images/news/ugmc-demo.jpg",
+      "author": "The Team",
+      "readTime": "6 min read"
+    },
+    {
+      "id": "journey-begins",
+      "title": "From UNICERF to Hospital Corridors: Why We're Building This",
+      "excerpt": "The story of how a university project became a mission to address Ghana's radiologist shortage through thoughtful, validated AI tools.",
+      "date": "2024-09-10",
+      "category": "Company",
+      "image": "/images/news/unicef-origin.jpg",
+      "author": "The Team",
+      "readTime": "7 min read"
+    }
   ]
 }
