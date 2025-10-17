@@ -1,0 +1,106 @@
+{
+  "features": [
+    {
+      "id": "ai-diagnostics",
+      "title": "AI Diagnostics",
+      "description": "Automatically detect and highlight potential chest abnormalities with confidence scores and explainability overlays. Our AI models are trained on diverse datasets and validated in clinical settings.",
+      "icon": "🔬",
+      "size": "large",
+      "tag": "Core Feature",
+      "image": "/images/features/ai-diagnostics.png"
+    },
+    {
+      "id": "telehealth",
+      "title": "Telehealth Integration",
+      "description": "Secure video consults and scheduling built into the platform. Connect patients with specialists seamlessly.",
+      "icon": "💻",
+      "size": "small",
+      "image": "/images/features/telehealth.jpg"
+    },
+    {
+      "id": "clinician-chat",
+      "title": "Clinician Chat",
+      "description": "Encrypted messaging for clinical collaboration and referrals. Share cases and insights securely.",
+      "icon": "💬",
+      "size": "small",
+      "image": "/images/features/chat.png"
+    },
+    {
+      "id": "integrations",
+      "title": "Enterprise Integrations",
+      "description": "DICOM, FHIR, PACS and SSO-ready. Seamlessly integrate with your existing healthcare infrastructure and workflows.",
+      "icon": "🔗",
+      "size": "small",
+      "tag": "Enterprise",
+      "image": "/images/features/integrations.png"
+    },
+    {
+      "id": "analytics",
+      "title": "Advanced Analytics",
+      "description": "Comprehensive dashboards and reporting tools to track patient outcomes, workflow efficiency, and diagnostic accuracy metrics.",
+      "icon": "📊",
+      "size": "large",
+      "image": "/images/features/analytics.png"
+    }
+  ],
+  "workflowSteps": [
+    {
+      "id": 1,
+      "title": "Upload Medical Images",
+      "description": "Securely upload chest X-rays through our HIPAA-compliant interface. Supports DICOM and standard image formats.",
+      "image": "/images/features/upload.jpg.png"
+    },
+    {
+      "id": 2,
+      "title": "AI Analysis",
+      "description": "Our AI models analyze images in seconds, detecting 14+ chest abnormalities with clinical-grade accuracy.",
+      "image": "/images/features/analysis.png"
+    },
+    {
+      "id": 3,
+      "title": "Review Results",
+      "description": "View AI-generated insights with confidence scores, heatmaps, and detailed explainability overlays.",
+      "image": "/images/features/review.png"
+    },
+    {
+      "id": 4,
+      "title": "Collaborate & Report",
+      "description": "Share findings with colleagues, generate reports, and document decisions in the integrated platform.",
+      "image": "/images/features/collaborate.png"
+    }
+  ],
+  "team": [
+    {
+      "id": "dr-ama-owusu",
+      "name": "Dr. Ama Owusu",
+      "role": "Chief Medical Officer",
+      "bio": "Radiologist with 12 years of clinical practice and AI collaboration experience. Leading our clinical validation and regulatory strategy.",
+      "image": "/images/team/ama.jpg",
+      "linkedin": "https://linkedin.com/in/amaowusu"
+    },
+    {
+      "id": "kofi-mensah",
+      "name": "Kofi Mensah",
+      "role": "CEO & Co-founder",
+      "bio": "Former healthcare consultant with expertise in digital health transformation across Africa. Stanford MBA.",
+      "image": "/images/team/kofi.jpg",
+      "linkedin": "https://linkedin.com/in/kofimensah"
+    },
+    {
+      "id": "dr-chioma-okafor",
+      "name": "Dr. Chioma Okafor",
+      "role": "Head of AI Research",
+      "bio": "PhD in Computer Vision from MIT. Published researcher in medical imaging and deep learning applications.",
+      "image": "/images/team/chioma.jpg",
+      "linkedin": "https://linkedin.com/in/chiomaokafor"
+    },
+    {
+      "id": "james-kamau",
+      "name": "James Kamau",
+      "role": "CTO",
+      "bio": "15+ years building scalable healthcare systems. Previously led engineering at major telehealth platform.",
+      "image": "/images/team/james.jpg",
+      "linkedin": "https://linkedin.com/in/jameskamau"
+    }
+  ]
+}
