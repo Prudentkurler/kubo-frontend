@@ -3,10 +3,12 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Navbar } from '@/components/sections/Navbar';
 
 export default function TechnologyPage() {
   return (
     <main className="bg-white">
+      <Navbar />
       {/* Hero Section */}
       <section className="relative bg-black text-white py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
