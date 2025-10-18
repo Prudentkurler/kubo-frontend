@@ -1,85 +1,52 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function DemoPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const fullscreenVideoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
+  const handleVideoClick = () => {
+    setIsFullscreen(true);
+    // Request fullscreen on the video element once modal is shown
+    setTimeout(() => {
+      if (fullscreenVideoRef.current) {
+        if (fullscreenVideoRef.current.requestFullscreen) {
+          fullscreenVideoRef.current.requestFullscreen();
+        } else if ((fullscreenVideoRef.current as any).webkitRequestFullscreen) {
+          (fullscreenVideoRef.current as any).webkitRequestFullscreen();
+        }
+      }
+    }, 100);
+  };
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleLoad = () => setIsVideoLoaded(true);
-
-    // Listen to multiple events to ensure we catch the video load
-    video.addEventListener('loadeddata', handleLoad);
-    video.addEventListener('canplay', handleLoad);
-    video.addEventListener('canplaythrough', handleLoad);
-
-    // Fallback: If video is already loaded or playable
-    if (video.readyState >= 3) {
-      setIsVideoLoaded(true);
-    }
-
-    // Safety fallback: Force show after 2 seconds
-    const timeout = setTimeout(() => {
-      setIsVideoLoaded(true);
-    }, 2000);
-
-    return () => {
-      video.removeEventListener('loadeddata', handleLoad);
-      video.removeEventListener('canplay', handleLoad);
-      video.removeEventListener('canplaythrough', handleLoad);
-      clearTimeout(timeout);
-    };
-  }, []);
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMousePosition({ x, y });
+  };
 
   return (
     <main className="bg-black">
-      {/* Hero Section - Fullscreen Video Background */}
-      <div ref={containerRef} className="relative h-[150vh]">
-        <motion.section 
-          style={{ opacity, scale }}
-          className="sticky top-0 h-screen w-full overflow-hidden"
+      {/* Hero Section - Clean Black Background */}
+      <section 
+        ref={heroRef}
+        onMouseMove={handleMouseMove}
+        className="relative h-screen w-full overflow-hidden bg-black"
+      >
+        {/* Content with parallax effect */}
+        <div 
+          className="relative z-10 h-full flex flex-col items-center justify-center px-4 transition-transform duration-300 ease-out"
+          style={{
+            transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`
+          }}
         >
-          {/* Video Background */}
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              isVideoLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <source src="/images/video/vid.webm" type="video/webm" />
-            <source src="/images/video/vid.mp4" type="video/mp4" />
-          </video>
-
-          {/* Gradient Overlays for Cinematic Effect */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
-          
-          {/* Vignette Effect */}
-          <div className="absolute inset-0 bg-radial-gradient opacity-40" />
-
-          {/* Content Overlay */}
-          <div className="relative z-10 h-full flex flex-col items-center justify-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -87,19 +54,19 @@ export default function DemoPage() {
               className="text-center max-w-4xl"
             >
               <motion.h1 
-                className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-tight"
+                className="text-5xl md:text-6xl font-light text-white mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 1, delay: 0.3 }}
               >
                 See KUBO in Action
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl text-gray-300 font-light mb-12 leading-relaxed"
+                className="text-xl text-gray-400 font-light mb-12 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.7 }}
+                transition={{ duration: 1, delay: 0.5 }}
               >
                 Real-time chest X-ray analysis powered by AI
               </motion.p>
@@ -112,12 +79,16 @@ export default function DemoPage() {
               >
                 <Link
                   href="/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-white text-black rounded-full font-light text-lg hover:bg-gray-100 transition-all hover:scale-105"
                 >
                   Request Access
                 </Link>
                 <Link
                   href="/technology"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-white/10 text-white rounded-full font-light text-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
                 >
                   Learn More
@@ -154,15 +125,7 @@ export default function DemoPage() {
               </motion.div>
             </motion.div>
           </div>
-
-          {/* Loading Skeleton */}
-          {!isVideoLoaded && (
-            <div className="absolute inset-0 bg-black flex items-center justify-center">
-              <div className="w-12 h-12 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-            </div>
-          )}
-        </motion.section>
-      </div>
+      </section>
 
       {/* Features Section - Picture-in-Picture Style */}
       <section className="relative bg-white py-32">
@@ -197,7 +160,7 @@ export default function DemoPage() {
             <div className="order-1 lg:order-2">
               <div 
                 className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
-                onClick={() => setIsFullscreen(true)}
+                onClick={handleVideoClick}
               >
                 <video
                   autoPlay
@@ -402,12 +365,16 @@ export default function DemoPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-black text-white rounded-full font-light text-lg hover:bg-gray-800 transition-all hover:scale-105"
               >
                 Request a Demo
               </Link>
               <Link
                 href="/team"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-gray-100 text-black rounded-full font-light text-lg hover:bg-gray-200 transition-all"
               >
                 Meet the Team
