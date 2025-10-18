@@ -7,7 +7,9 @@ import Link from 'next/link';
 export default function DemoPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const fullscreenVideoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -193,7 +195,10 @@ export default function DemoPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <div 
+                className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
+                onClick={() => setIsFullscreen(true)}
+              >
                 <video
                   autoPlay
                   muted
@@ -204,6 +209,14 @@ export default function DemoPage() {
                   <source src="/images/video/vid.webm" type="video/webm" />
                   <source src="/images/video/vid.mp4" type="video/mp4" />
                 </video>
+                {/* Play overlay indicator */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -217,7 +230,10 @@ export default function DemoPage() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32"
           >
             <div>
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <div 
+                className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
+                onClick={() => setIsFullscreen(true)}
+              >
                 <video
                   autoPlay
                   muted
@@ -228,6 +244,14 @@ export default function DemoPage() {
                   <source src="/images/video/vid.webm" type="video/webm" />
                   <source src="/images/video/vid.mp4" type="video/mp4" />
                 </video>
+                {/* Play overlay indicator */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
             <div>
@@ -279,7 +303,10 @@ export default function DemoPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <div 
+                className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
+                onClick={() => setIsFullscreen(true)}
+              >
                 <video
                   autoPlay
                   muted
@@ -290,27 +317,23 @@ export default function DemoPage() {
                   <source src="/images/video/vid.webm" type="video/webm" />
                   <source src="/images/video/vid.mp4" type="video/mp4" />
                 </video>
+                {/* Play overlay indicator */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Clinical Validation Section - UGMC Background */}
-      <section className="relative py-32 overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/workflow/ugmc.jpg)' }}
-        />
-        
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/80" />
-        
-        {/* Gradient Overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Clinical Validation Section - Dark Background */}
+      <section className="relative bg-black py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -321,12 +344,12 @@ export default function DemoPage() {
             <h2 className="text-5xl font-light text-white mb-6">
               Trusted by Clinicians
             </h2>
-            <p className="text-xl text-gray-300 font-light max-w-3xl mx-auto">
-              Validated through partnerships with Ghana&apos;s leading medical institutions including UGMC and Korle Bu Teaching Hospital
+            <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
+              Validated through partnerships with Ghana&apos;s leading medical institutions
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -335,7 +358,7 @@ export default function DemoPage() {
               className="text-center"
             >
               <div className="text-5xl font-light text-white mb-2">12,450+</div>
-              <div className="text-gray-300 font-light">Training images</div>
+              <div className="text-gray-400 font-light">Training images</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -345,7 +368,7 @@ export default function DemoPage() {
               className="text-center"
             >
               <div className="text-5xl font-light text-white mb-2">94.2%</div>
-              <div className="text-gray-300 font-light">Diagnostic accuracy</div>
+              <div className="text-gray-400 font-light">Diagnostic accuracy</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -355,28 +378,9 @@ export default function DemoPage() {
               className="text-center"
             >
               <div className="text-5xl font-light text-white mb-2">2,847</div>
-              <div className="text-gray-300 font-light">Test cases</div>
+              <div className="text-gray-400 font-light">Test cases</div>
             </motion.div>
           </div>
-
-          {/* Additional Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-8 text-center"
-          >
-            <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <span className="text-white font-light">UGMC Validated</span>
-            </div>
-            <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <span className="text-white font-light">Korle Bu Partnership</span>
-            </div>
-            <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <span className="text-white font-light">DICOM Compatible</span>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -412,6 +416,46 @@ export default function DemoPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Fullscreen Video Modal */}
+      {isFullscreen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+          onClick={() => setIsFullscreen(false)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setIsFullscreen(false)}
+            className="absolute top-6 right-6 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all group"
+          >
+            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Video container */}
+          <div className="w-full h-full max-w-7xl max-h-[90vh] p-8" onClick={(e) => e.stopPropagation()}>
+            <video
+              ref={fullscreenVideoRef}
+              autoPlay
+              controls
+              loop
+              className="w-full h-full object-contain rounded-2xl"
+            >
+              <source src="/images/video/vid.webm" type="video/webm" />
+              <source src="/images/video/vid.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          {/* Instruction text */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-sm font-light">
+            Click anywhere to close
+          </div>
+        </motion.div>
+      )}
     </main>
   );
 }
