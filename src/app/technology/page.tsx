@@ -4,29 +4,45 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Navbar } from '@/components/sections/Navbar';
+import { Footer } from '@/components/sections/Footer';
 
 export default function TechnologyPage() {
   return (
     <main className="bg-white">
       <Navbar />
       {/* Hero Section */}
-      <section className="relative bg-black text-white py-32 overflow-hidden">
+      <section className="relative bg-black text-white pt-32 pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-light mb-6 text-white">
-              AI That Measures, Radiologists Who Verify
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-light mb-8 border border-white/20"
+            >
+              Powered by MedGemma AI
+            </motion.div>
+            
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight mb-8 text-white leading-[1.1] tracking-tight">
+              AI That Measures.
+              <br />
+              <span className="text-gray-400">Radiologists Who Verify.</span>
             </h1>
-            <p className="text-xl text-gray-300 font-light leading-relaxed">
-              A complete AI-assisted radiology platform built for African healthcare. 
-              From diagnosis to report generation, with precision tools for clinical verification.
+            
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto">
+              A complete AI-assisted radiology platform built for African healthcare—from multimodal diagnosis 
+              to report generation, with precision tools for clinical verification.
             </p>
           </motion.div>
         </div>
+        
+        {/* Subtle gradient overlay */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* How It Works - Process Flow */}
@@ -159,6 +175,158 @@ export default function TechnologyPage() {
             {/* Empty columns for alignment */}
             <div className="hidden md:block"></div>
             <div className="hidden md:block"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Multimodal AI Capabilities Section */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-light mb-6 border border-gray-200">
+              Powered by MedGemma
+            </div>
+            <h2 className="text-5xl md:text-6xl font-extralight text-black mb-6 tracking-tight">
+              One AI, Multiple Inputs
+            </h2>
+            <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              MedGemma is multimodal—analyzing combinations of text, images, CT scans, and MRI data 
+              simultaneously for comprehensive diagnostics
+            </p>
+          </motion.div>
+
+          {/* Three Modality Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            
+            {/* Text Input */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gray-50 rounded-3xl p-10 border border-gray-200 hover:border-gray-300 transition-all group"
+            >
+              <div className="w-14 h-14 mb-6 rounded-2xl bg-black flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-light mb-4 text-black">
+                Clinical Text
+              </h3>
+              <p className="text-gray-600 mb-6 font-light leading-relaxed">
+                Process medical history, symptoms, clinical notes, and referral documents
+              </p>
+              <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <p className="text-sm text-gray-500 font-light italic leading-relaxed">
+                  "Patient complaints, referral notes, previous diagnosis history"
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Standard Imaging */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gray-50 rounded-3xl p-10 border border-gray-200 hover:border-gray-300 transition-all group"
+            >
+              <div className="w-14 h-14 mb-6 rounded-2xl bg-black flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-light mb-4 text-black">
+                X-Rays & Images
+              </h3>
+              <p className="text-gray-600 mb-6 font-light leading-relaxed">
+                Chest X-rays, standard radiographs, and 2D medical imaging
+              </p>
+              <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <p className="text-sm text-gray-500 font-light italic leading-relaxed">
+                  "Chest X-rays with automated CTR measurement and abnormality detection"
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Advanced Imaging */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-gray-50 rounded-3xl p-10 border border-gray-200 hover:border-gray-300 transition-all group"
+            >
+              <div className="w-14 h-14 mb-6 rounded-2xl bg-black flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-light mb-4 text-black">
+                CT & MRI Scans
+              </h3>
+              <p className="text-gray-600 mb-6 font-light leading-relaxed">
+                3D volumetric analysis of CT scans, MRI sequences, and complex imaging
+              </p>
+              <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <p className="text-sm text-gray-500 font-light italic leading-relaxed">
+                  "CT chest scans, brain MRI sequences, multi-slice analysis"
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Why Multimodal Matters */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-black rounded-3xl p-12 md:p-16 text-white"
+          >
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-4xl md:text-5xl font-extralight mb-6 tracking-tight">Why Multimodal AI Matters</h3>
+              <p className="text-xl font-light leading-relaxed mb-12 text-gray-300">
+                Our AI doesn't just analyze images in isolation—it understands the full clinical context 
+                by combining multiple data sources. This leads to more accurate diagnostics, fewer false 
+                positives, and better support for complex cases.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="border-l-2 border-white/20 pl-6">
+                  <div className="text-5xl font-extralight mb-3 text-white">+12%</div>
+                  <p className="text-base text-gray-400 font-light">Accuracy improvement with multimodal analysis</p>
+                </div>
+                <div className="border-l-2 border-white/20 pl-6">
+                  <div className="text-5xl font-extralight mb-3 text-white">3x</div>
+                  <p className="text-base text-gray-400 font-light">Faster diagnosis with combined inputs</p>
+                </div>
+                <div className="border-l-2 border-white/20 pl-6">
+                  <div className="text-5xl font-extralight mb-3 text-white">-40%</div>
+                  <p className="text-base text-gray-400 font-light">Reduction in false positive rates</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Supported Formats */}
+          <div className="mt-16 text-center">
+            <p className="text-gray-500 font-light mb-6 text-sm uppercase tracking-wide">Supported Formats</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {['DICOM', 'JPEG', 'PNG', 'NIfTI', 'NRRD', 'PDF (Reports)'].map((format) => (
+                <span key={format} className="px-5 py-2.5 bg-gray-100 border border-gray-200 rounded-full text-sm text-gray-700 font-light hover:bg-gray-200 transition-colors">
+                  {format}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -854,6 +1022,8 @@ export default function TechnologyPage() {
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </main>
   );
 }
