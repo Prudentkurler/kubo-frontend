@@ -6,6 +6,13 @@ import Image from 'next/image';
 import { Card } from '@/components/ui/Card';
 import { Feature } from '@/types';
 import { cn } from '@/lib/utils';
+import {
+  BeakerIcon,
+  ComputerDesktopIcon,
+  ChatBubbleLeftRightIcon,
+  LinkIcon,
+  ChartBarIcon,
+} from '@heroicons/react/24/outline';
 
 export interface FeatureBentoProps {
   features: Feature[];
@@ -119,7 +126,11 @@ function FeatureTile({ feature, index }: FeatureTileProps) {
             {/* Icon */}
             {feature.icon && (
               <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/15 group-hover:bg-white/15 transition-colors">
-                <span className="text-3xl">{feature.icon}</span>
+                {feature.icon === 'BeakerIcon' && <BeakerIcon className="w-7 h-7 text-white" />}
+                {feature.icon === 'ComputerDesktopIcon' && <ComputerDesktopIcon className="w-7 h-7 text-white" />}
+                {feature.icon === 'ChatBubbleLeftRightIcon' && <ChatBubbleLeftRightIcon className="w-7 h-7 text-white" />}
+                {feature.icon === 'LinkIcon' && <LinkIcon className="w-7 h-7 text-white" />}
+                {feature.icon === 'ChartBarIcon' && <ChartBarIcon className="w-7 h-7 text-white" />}
               </div>
             )}
 

@@ -4,7 +4,7 @@
       "id": "ai-diagnostics",
       "title": "AI Diagnostics",
       "description": "Automatically detect and highlight potential chest abnormalities with confidence scores and explainability overlays. Our AI models are trained on diverse datasets and validated in clinical settings.",
-      "icon": "🔬",
+      "icon": "BeakerIcon",
       "size": "large",
       "tag": "Core Feature",
       "image": "/images/features/chest-xray.jpg"
@@ -13,7 +13,7 @@
       "id": "telehealth",
       "title": "Telehealth Integration",
       "description": "Secure video consults and scheduling built into the platform. Connect patients with specialists seamlessly.",
-      "icon": "💻",
+      "icon": "ComputerDesktopIcon",
       "size": "small",
       "image": "/images/features/telehealth.jpg"
     },
@@ -21,7 +21,7 @@
       "id": "clinician-chat",
       "title": "Clinician Chat",
       "description": "Encrypted messaging for clinical collaboration and referrals. Share cases and insights securely.",
-      "icon": "💬",
+      "icon": "ChatBubbleLeftRightIcon",
       "size": "small",
       "image": "/images/features/chat.png"
     },
@@ -29,7 +29,7 @@
       "id": "integrations",
       "title": "Enterprise Integrations",
       "description": "DICOM, FHIR, PACS and SSO-ready. Seamlessly integrate with your existing healthcare infrastructure and workflows.",
-      "icon": "🔗",
+      "icon": "LinkIcon",
       "size": "small",
       "tag": "Enterprise",
       "image": "/images/features/integrations.png"
@@ -38,7 +38,7 @@
       "id": "analytics",
       "title": "Advanced Analytics",
       "description": "Comprehensive dashboards and reporting tools to track patient outcomes, workflow efficiency, and diagnostic accuracy metrics.",
-      "icon": "📊",
+      "icon": "ChartBarIcon",
       "size": "large",
       "image": "/images/features/analytics.png"
     }

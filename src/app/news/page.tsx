@@ -6,6 +6,10 @@ import Image from 'next/image';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import contentData from '@/data/content.json';
+import {
+  NewspaperIcon,
+  DocumentTextIcon,
+} from '@heroicons/react/24/outline';
 
 export default function NewsPage() {
   const articles = contentData.news;
@@ -54,8 +58,8 @@ export default function NewsPage() {
                 <div className="relative h-80 lg:h-auto overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500">
                     {/* Placeholder for featured image */}
-                    <div className="w-full h-full flex items-center justify-center text-gray-500 text-4xl">
-                      📰
+                    <div className="w-full h-full flex items-center justify-center text-gray-500">
+                      <NewspaperIcon className="w-16 h-16" />
                     </div>
                   </div>
                   <div className="absolute top-6 left-6">
@@ -133,8 +137,8 @@ export default function NewsPage() {
                   <div className="relative h-64 overflow-hidden bg-gray-200">
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500">
                       {/* Placeholder */}
-                      <div className="w-full h-full flex items-center justify-center text-gray-500 text-3xl">
-                        📄
+                      <div className="w-full h-full flex items-center justify-center text-gray-500">
+                        <DocumentTextIcon className="w-12 h-12" />
                       </div>
                     </div>
                     <div className="absolute top-4 left-4">

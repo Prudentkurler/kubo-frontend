@@ -6,6 +6,12 @@ import Link from 'next/link';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { useEffect, useState, useRef } from 'react';
+import {
+  BuildingOffice2Icon,
+  GlobeAltIcon,
+  BeakerIcon,
+  HandRaisedIcon,
+} from '@heroicons/react/24/outline';
 
 // Animated counter hook
 const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean = false) => {
@@ -448,7 +454,7 @@ export default function TeamPage() {
               className="text-center"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                <span className="text-2xl">🏥</span>
+                <BuildingOffice2Icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-light text-white mb-3">Clinical First</h3>
               <p className="text-gray-300 font-light text-sm leading-relaxed">
@@ -464,7 +470,7 @@ export default function TeamPage() {
               className="text-center"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                <span className="text-2xl">🌍</span>
+                <GlobeAltIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-light text-white mb-3">Africa Expertise</h3>
               <p className="text-gray-300 font-light text-sm leading-relaxed">
@@ -480,7 +486,7 @@ export default function TeamPage() {
               className="text-center"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                <span className="text-2xl">🔬</span>
+                <BeakerIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-light text-white mb-3">Transparent AI</h3>
               <p className="text-gray-300 font-light text-sm leading-relaxed">
@@ -496,7 +502,7 @@ export default function TeamPage() {
               className="text-center"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                <span className="text-2xl">🤝</span>
+                <HandRaisedIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-light text-white mb-3">Partnership Mindset</h3>
               <p className="text-gray-300 font-light text-sm leading-relaxed">

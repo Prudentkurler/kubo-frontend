@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Navbar } from '@/components/sections/Navbar';
 import contentData from '@/data/content.json';
 import { notFound } from 'next/navigation';
+import { DocumentTextIcon } from '@heroicons/react/24/outline';
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = contentData.news.find(a => a.id === params.slug);
@@ -244,8 +245,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                     >
                       <div className="relative h-48 overflow-hidden bg-gray-200">
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 group-hover:scale-105 transition-transform duration-500">
-                          <div className="w-full h-full flex items-center justify-center text-gray-500 text-2xl">
-                            📄
+                          <div className="w-full h-full flex items-center justify-center text-gray-500">
+                            <DocumentTextIcon className="w-10 h-10" />
                           </div>
                         </div>
                         <div className="absolute top-4 left-4">
