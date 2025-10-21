@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar } from '@/components/sections/Navbar';
+import { Footer } from '@/components/sections/Footer';
 import { useEffect, useState, useRef } from 'react';
 
 // Animated counter hook
@@ -169,18 +170,18 @@ export default function TeamPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-black text-white py-32 overflow-hidden">
+      <section className="relative bg-black text-white pt-32 pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-5xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-light mb-6 text-white">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight mb-8 text-white leading-[1.1] tracking-tight">
               Building the Future of African Healthcare
             </h1>
-            <p className="text-xl text-gray-300 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto">
               A multidisciplinary team of clinicians, engineers, and healthcare strategists 
               united by one mission: making quality radiology accessible across Africa.
             </p>
@@ -539,6 +540,8 @@ export default function TeamPage() {
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </main>
   );
 }

@@ -73,17 +73,17 @@ export default function ContactPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative pt-32 pb-32 px-6 bg-black overflow-hidden">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-light mb-6 text-white">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight mb-8 text-white leading-[1.1] tracking-tight">
               Let's Work Together
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto">
               Whether you're a hospital seeking AI-powered diagnostics or an investor interested in African HealthTech, we'd love to hear from you.
             </p>
           </motion.div>

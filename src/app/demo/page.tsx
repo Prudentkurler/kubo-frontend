@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -9,6 +9,27 @@ export default function DemoPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [typedText, setTypedText] = useState('');
+  const fullText = 'See KUBO in Action';
+  
+  // Typewriter effect with delay
+  useEffect(() => {
+    const startDelay = setTimeout(() => {
+      let currentIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (currentIndex <= fullText.length) {
+          setTypedText(fullText.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(typingInterval);
+        }
+      }, 80); // 80ms per character for smoother typing
+      
+      return () => clearInterval(typingInterval);
+    }, 500); // Start after 500ms delay
+    
+    return () => clearTimeout(startDelay);
+  }, []);
 
   const handleVideoClick = () => {
     setIsFullscreen(true);
@@ -53,42 +74,46 @@ export default function DemoPage() {
               transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
               className="text-center max-w-4xl"
             >
-              <motion.h1 
-                className="text-5xl md:text-6xl font-light text-white mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-              >
-                See KUBO in Action
-              </motion.h1>
+              {/* Animated Gradient Text with Typewriter */}
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extralight mb-8 leading-[1.1] tracking-tight">
+                <span 
+                  className="inline-block bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent animate-shimmer"
+                  style={{
+                    backgroundSize: '200% auto',
+                    animation: 'shimmer 3s linear infinite'
+                  }}
+                >
+                  {typedText}
+                  {typedText.length < fullText.length && (
+                    <span className="animate-pulse text-white">|</span>
+                  )}
+                </span>
+              </h1>
               
               <motion.p 
-                className="text-xl text-gray-400 font-light mb-12 max-w-3xl mx-auto"
+                className="text-xl md:text-2xl text-gray-400 font-light mb-12 max-w-3xl mx-auto leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 1, delay: 1.5 }}
               >
-                Real-time chest X-ray analysis powered by AI
+                Real-time chest X-ray analysis powered by MedGemma AI. 
+                Watch our platform detect abnormalities in seconds.
               </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.9 }}
+                transition={{ duration: 1, delay: 2 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center"
               >
                 <Link
                   href="/contact"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 bg-white text-black rounded-full font-light text-lg hover:bg-gray-100 transition-all hover:scale-105"
+                  className="px-8 py-4 bg-white text-black rounded-full font-light text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
                 >
                   Request Access
                 </Link>
                 <Link
                   href="/technology"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-white/10 text-white rounded-full font-light text-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
                 >
                   Learn More
@@ -100,7 +125,7 @@ export default function DemoPage() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
+              transition={{ duration: 1, delay: 2.5 }}
               className="absolute bottom-8 left-1/2 -translate-x-1/2"
             >
               <motion.div
