@@ -104,7 +104,7 @@ export function HowItWorksCarousel({ steps }: HowItWorksCarouselProps) {
                 {/* Navigation */}
                 <div className="flex items-center gap-4 pt-4">
                   <Button
-                    variant="outline"
+                    variant="tertiary"
                     size="sm"
                     onClick={prevStep}
                     aria-label="Previous step"
@@ -139,7 +139,7 @@ export function HowItWorksCarousel({ steps }: HowItWorksCarouselProps) {
                   </div>
 
                   <Button
-                    variant="outline"
+                    variant="tertiary"
                     size="sm"
                     onClick={nextStep}
                     aria-label="Next step"
