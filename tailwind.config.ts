@@ -35,6 +35,98 @@ const config: Config = {
           amber: '#FFB020',
           red: '#FF3B3B',
         },
+        // Dashboard Colors - Pure Black Theme
+        dashboard: {
+          bg: {
+            main: '#000000',
+          },
+          surface: {
+            DEFAULT: '#0a0a0a',
+            elevated: '#141414',
+          },
+          border: {
+            DEFAULT: '#1f1f1f',
+            hover: '#2a2a2a',
+          },
+          text: {
+            high: '#ffffff',
+            medium: '#a3a3a3',
+            disabled: '#525252',
+          },
+          primary: {
+            DEFAULT: '#3b82f6',
+            hover: '#60a5fa',
+          },
+          secondary: {
+            DEFAULT: '#8b5cf6',
+            hover: '#a78bfa',
+          },
+          success: {
+            DEFAULT: '#10b981',
+            hover: '#34d399',
+            bg: 'rgba(16, 185, 129, 0.12)',
+            border: 'rgba(16, 185, 129, 0.24)',
+          },
+          warning: {
+            DEFAULT: '#f59e0b',
+            hover: '#fbbf24',
+            bg: 'rgba(245, 158, 11, 0.12)',
+            border: 'rgba(245, 158, 11, 0.24)',
+          },
+          danger: {
+            DEFAULT: '#ef4444',
+            hover: '#f87171',
+            bg: 'rgba(239, 68, 68, 0.12)',
+            border: 'rgba(239, 68, 68, 0.24)',
+          },
+          info: {
+            DEFAULT: '#06b6d4',
+            hover: '#22d3ee',
+            bg: 'rgba(6, 182, 212, 0.12)',
+            border: 'rgba(6, 182, 212, 0.24)',
+          },
+          chart: {
+            1: '#3b82f6',  // Blue
+            2: '#8b5cf6',  // Purple
+            3: '#ec4899',  // Pink
+            4: '#f59e0b',  // Amber
+            5: '#10b981',  // Emerald
+            6: '#06b6d4',  // Cyan
+          },
+          accent: {
+            cyan: '#06b6d4',
+            purple: '#8b5cf6',
+            pink: '#ec4899',
+            green: '#10b981',
+            orange: '#f97316',
+          },
+        },
+        // Light Mode Dashboard Colors
+        'dashboard-light': {
+          bg: {
+            main: '#F8F9FA',
+            surface: '#FFFFFF',
+          },
+          border: '#E5E7EB',
+          text: {
+            high: '#111827',
+            medium: '#4B5563',
+            disabled: '#9CA3AF',
+          },
+          primary: '#2563EB',
+          secondary: '#7C3AED',
+          success: '#16A34A',
+          warning: '#D97706',
+          danger: '#DC2626',
+          chart: {
+            1: '#2563EB',
+            2: '#0D9488',
+            3: '#DB2777',
+            4: '#CA8A04',
+            5: '#EA580C',
+            6: '#7C3AED',
+          },
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
