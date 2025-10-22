@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import '@/styles/globals.css'
+import { ToastProvider } from '@/components/ui/Toast'
+import { ModalProvider } from '@/components/ui/Modal'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -58,7 +60,11 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <ToastProvider>
+          <ModalProvider>
+            {children}
+          </ModalProvider>
+        </ToastProvider>
       </body>
     </html>
   )
